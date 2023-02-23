@@ -1,93 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
 
-    <!-- Compiled and minified CSS -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+
+  <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--CSS local-->
-  <link rel="stylesheet" href="css/style.css"> 
-    <title>Document</title>
+  <!--CSS local-->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
 </head>
 
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <body class="color cyan">
-<!--DIVIDIR A PAGINA EM 3-->
+  <!--DIVIDIR A PAGINA EM 3-->
 
-<!--CRIAR UMA CLASS QUE TODAS AS PERGUNTAS COMPARTILHE-->
+  <!--CRIAR UMA CLASS QUE TODAS AS PERGUNTAS COMPARTILHE-->
 
-<!--CRIAR UMA CLASS QUE TODAS AS RESPOSTAS COMPARTILHE-->
+  <!--CRIAR UMA CLASS QUE TODAS AS RESPOSTAS COMPARTILHE-->
 
-<!--NAVBAR FIXA-->
-<DIV class="navbar-fixed ">
+  <!--NAVBAR FIXA-->
+  <div class="navbar-fixed ">
     <div class="nav-wrapper ">
-        <nav class="green">   
+      <nav class="green">
         <p class="center">Sua denúncia será anônima</p>
-        </nav>   
+      </nav>
     </div>
-</DIV>
+  </div>
 
-<!--Modal-->
+  <!--Modal-->
 
-        
-<div class="row">
+
+  <div class="row">
     <div class="col s3">
 
-         <!-- Modal Trigger -->
-  <button data-target="modal1" class="btn modal-trigger">Modal</button>
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
         </div>
-        
-        
-        
-        
-        <ul class="collapsible popout">
-<li >
-    <div class="collapsible-header green">
-        <i class="material-icons">live_help</i>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
+
+
+
+
+      <ul class="collapsible popout">
+        <li>
+          <div class="collapsible-header green">
+            <i class="material-icons">live_help</i>
+          </div>
+          <div class="collapsible-body white ">
+            <span class="valing">Este aplicativo serve para você realizar denuncias e
+              acionar os órgãos públicos responsáveis de sua cidade.</span>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="collapsible-body white ">
-        <span class="valing">Este aplicativo serve para você realizar denuncias e 
-acionar os órgãos públicos responsáveis de sua cidade.</span>
-    </div>
-</li>
-</ul></div>
     <div class="col s8 blue "></div>
-</div>
+  </div>
 
-<div class="container">
+  <div class="container">
 
-<form  class="col s12" action="" >
-    <div class="row">
-            <div class="col s7"><p class="pergunta">1- Quem é ?</p> </div>
-            <div class="col s5">
-                <ul class="collapsible popout">
-                    <li >
-                        <div class="collapsible-header green">
-                            <i class="material-icons">live_help</i>
-                        </div>
-                        <div class="collapsible-body white ">
-                            <span class="valing">Aqui você deve selecionar quem está precisando de ajuda.</span>
-                        </div>
-                    </li>
-                    </ul>
-            </div>
+    <form class="col s12" action="">
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">1- Quem é ?</p>
         </div>
-<!--Resposta 1-->
-        <div class="white">
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Aqui você deve selecionar quem está precisando de ajuda.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--Resposta 1-->
+      <div class="white">
         <p>
           <label>
             <input name="group1" type="radio" />
@@ -126,131 +131,138 @@ acionar os órgãos públicos responsáveis de sua cidade.</span>
         </p>
         <br>
         <div class="input-field col s6">
-    <input type="text" id="nome" placeholder="Nome da pessoa">
-    <label for="nome">Nome se você souber:</label>
+          <input type="text" id="nome" placeholder="Nome da pessoa">
+          <label for="nome">Nome se você souber:</label>
         </div>
-    </div>
-<!--Pergunta e Caixa 2-->
-<div class="row">
-    <div class="col s7"><p class="pergunta">2- O que está acontecendo?</p></div>
-    <div class="col s5">
-        <ul class="collapsible popout">
-            <li >
-                <div class="collapsible-header green">
-                    <i class="material-icons">live_help</i>
-                </div>
-                <div class="collapsible-body white ">
-                    <span class="valing">Selecione o que está acontecendo, 
-                ex: O meu vizinho sempre bate no filho quando bêbado, no caso a opção seria MAUS TRATOS</span>
-                </div>
+      </div>
+      <!--Pergunta e Caixa 2-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">2- O que está acontecendo?</p>
+        </div>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Selecione o que está acontecendo,
+                  ex: O meu vizinho sempre bate no filho quando bêbado, no caso a opção seria MAUS TRATOS</span>
+              </div>
             </li>
-            </ul>
-    </div>
-</div>
-<!--Resposta 2-->
-<div class="white">
-<p>
-    <label>
-      <input name="group2" type="radio" />
-      <span>Trabalho Infantil</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group2" type="radio" />
-      <span>Abuso</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group2" type="radio" />
-      <span>Abandono</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group2" type="radio" />
-      <span>Maus tratos</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group2 " type="radio" />
-      <span>Está em um surto de drogas</span>
-    </label>
-  </p>
-</div>
+          </ul>
+        </div>
+      </div>
+      <!--Resposta 2-->
+      <div class="white">
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Trabalho Infantil</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Abuso</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Abandono</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Maus tratos</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2 " type="radio" />
+            <span>Está em um surto de drogas</span>
+          </label>
+        </p>
+      </div>
 
-<!--Pergunta e Caixa 3-->
+      <!--Pergunta e Caixa 3-->
 
-<div class="row">
-    <div class="col s7"><p class="pergunta">3- Onde está?</p></div>
-    <div class="col s5">
-        <ul class="collapsible popout">
-            <li >
-                <div class="collapsible-header green">
-                    <i class="material-icons">live_help</i>
-                </div>
-                <div class="collapsible-body white ">
-                    <span class="valing">Você irá por o endereço do local que ira sofrer a denúncia, 
-                    Ex: se for o filho do seu vizinho você vai por o número da casa dele e o nome da rua.
-                    Se for um morador de rua você coloca a rua que ele está e o número da casa mais próxima</span>
-                </div>
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">3- Onde está?</p>
+        </div>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Você irá por o endereço do local que ira sofrer a denúncia,
+                  Ex: se for o filho do seu vizinho você vai por o número da casa dele e o nome da rua.
+                  Se for um morador de rua você coloca a rua que ele está e o número da casa mais próxima</span>
+              </div>
             </li>
-            </ul>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
 
-<!--resposta 3-->
-<div class="white">
-    <div class="input-field col s6">
-        <input type="text" id="rua" placeholder="Nome da rua se você souber">
-        <label for="rua"></label>
-    </div>
+      <!--resposta 3-->
+      <div class="white">
+        <div class="input-field col s6">
+          <input type="text" id="rua" placeholder="Nome da rua se você souber">
+          <label for="rua"></label>
+        </div>
 
-    <div class="input-field col s6">
-        <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-        <label for="rua"></label>
-    </div>
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
+        </div>
 
-    <div class="input-field col s6">
-        <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-        <label for="rua"></label>
-    </div>
-</div>
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
+        </div>
+      </div>
 
-<!--Observação e Caixa 4-->
-<div class="row">
-    <div class="col s7"><p class="pergunta">Observação:</p></div>
-    <div class="col s5">
-        <ul class="collapsible popout">
-            <li >
-                <div class="collapsible-header green">
-                    <i class="material-icons">live_help</i>
-                </div>
-                <div class="collapsible-body white ">
-                    <span class="valing">Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do ocorrido.</span>
-                </div>
+      <!--Observação e Caixa 4-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">Observação:</p>
+        </div>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do
+                  ocorrido.</span>
+              </div>
             </li>
-            </ul>
-    </div>
-</div>
-<!--RESPOSTA-->
-<div class="white">
-    <div class="input-field col s6">
-        <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-        <label for="rua"></label>
-    </div>
-</div>
+          </ul>
+        </div>
+      </div>
+      <!--RESPOSTA-->
+      <div class="white">
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
+        </div>
+      </div>
 
 
 
     </form>
-</div>
+  </div>
 
 
 
-<!--Espaços 
+  <!--Espaços 
 <div class="row">
     <div class="col s4"><ul class="collapsible popout">
 <li>
@@ -375,24 +387,17 @@ ipsum dolor sit amet...'
 </div>
 -->
 
-    <!--POUPOUT-->
-<script>$(document).ready(function(){ $('.collapsible').collapsible();})</script>
+  <!--POUPOUT-->
+  <script>$(document).ready(function () { $('.collapsible').collapsible(); })</script>
 
-     <!--JQuery-->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-     <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script> $('.collapsible').collapsible();</script>
-
-    <!--modal-->
-<script>
-$('.modal').modal('methodName');$('.modal').modal('methodName', paramName);
-</script>
-<!-- Modal Trigger -->
-<button data-target="modal1" class="btn modal-trigger">Modal</button>
-         
+  <script> $('.collapsible').collapsible();</script>
 
 </body>
+
 </html>
