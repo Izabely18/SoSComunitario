@@ -10,100 +10,144 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
   <title>SoS Comunitario</title>
 </head>
 
 <body class="color cyan">
   <!--NAVBAR FIXA-->
-  <DIV class="navbar-fixed ">
+  <div class="navbar-fixed ">
     <div class="nav-wrapper ">
-        <nav class="green">   
+      <nav class="green">
         <p class="center">Sua denúncia será anônima</p>
-        </nav>   
+      </nav>
     </div>
-</DIV>
-
- <!--popout-->
-<div class="row">
-  <div class="col s3"><ul class="collapsible popout">
-<li >
-  <div class="collapsible-header green">
-      <i class="material-icons">live_help</i>
   </div>
-  <div class="collapsible-body white ">
-      <span class="valing">Este aplicativo serve para você realizar denuncias e 
-acionar os órgãos públicos responsáveis de sua cidade.</span>
+
+  <!--Modal-->
+
+
+  <div class="row">
+    <div class="col s3">
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
+
+
+
+
+      <ul class="collapsible popout">
+        <li>
+          <div class="collapsible-header green">
+            <i class="material-icons">live_help</i>
+          </div>
+          <div class="collapsible-body white ">
+            <span class="valing">Este aplicativo serve para você realizar denuncias e
+              acionar os órgãos públicos responsáveis de sua cidade.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col s8 blue "></div>
   </div>
-</li>
-</ul></div>
-  <div class="col s8 blue "></div>
-</div>
 
-<div class="container">
-  <li>
-    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
-    <div class="collapsible-body"><span>Aqui você deve selecionar quem está precisando de ajuda. </span></div>
-  </li>
-</ul>
+  <div class="container">
+
+    <form class="col s12" action="">
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">1- Quem é ?</p>
         </div>
-    </div>
-
-<form  class="card-panel white" >
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Jovem</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Adulto</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Idoso</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Criança</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Deficiente</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span>Grávida</span>
-    </label>
-  </p>
-  <p >Nome se você souber</p>
-  <input class="s6">
-
-    <div class="3 row">
-        <div class="col s1">
-<ul class="collapsible">
-  <li>
-    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
-    <div class="collapsible-body"><span>selecione o que está acontecendo
-ex:o meu vizinho sempre bate no filho, no caso a opção seria MAUS TRATOS </span></div>
-  </li> 
-</ul>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Aqui você deve selecionar quem está precisando de ajuda.</span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="col s11">
-
+      </div>
+      <!--Resposta 1-->
+      <div class="white">
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Jovem</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Adulto</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Idoso</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Criança</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Deficiente</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Grávida</span>
+          </label>
+        </p>
+        <br>
+        <div class="input-field col s6">
+          <input type="text" id="nome" placeholder="Nome da pessoa">
+          <label for="nome">Nome se você souber:</label>
         </div>
-    </div>
-
+      </div>
+      <!--Pergunta e Caixa 2-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">2- O que está acontecendo?</p>
+        </div>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Selecione o que está acontecendo,
+                  ex: O meu vizinho sempre bate no filho quando bêbado, no caso a opção seria MAUS TRATOS</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--Resposta 2-->
+      <div class="white">
         <p>
           <label>
             <input name="group2" type="radio" />
@@ -134,47 +178,83 @@ ex:o meu vizinho sempre bate no filho, no caso a opção seria MAUS TRATOS </spa
             <span>Está em um surto de drogas</span>
           </label>
         </p>
+      </div>
 
-    <div class="4 row">
-        <div class="col s1">
-<ul class="collapsible">
-  <li>
-    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
-    <div class="collapsible-body"><span>Você irá por o endereço do local que ira sofrer a denuncia, ex: se for o filho do seu vizinho você vai por o numero da casa 
-      dele e o nome da rua. Se for um morador de rua você coloca a rua que ele está e o numero da casa mais próxima </span></div>
-  </li>
-</ul>
+      <!--Pergunta e Caixa 3-->
+
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">3- Onde está?</p>
         </div>
-        <div class="col s11">
-<p class="pergunta">3- Onde está?</p>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Você irá por o endereço do local que ira sofrer a denúncia,
+                  Ex: se for o filho do seu vizinho você vai por o número da casa dele e o nome da rua.
+                  Se for um morador de rua você coloca a rua que ele está e o número da casa mais próxima</span>
+              </div>
+            </li>
+          </ul>
         </div>
-</div>
+      </div>
 
-
-
-          <p>Escreva o nome da cidade onde você está-</p>
-        <input>
-
-    <div class="5 row">
-    <div class="col s1">
-<ul class="collapsible">
-  <li>
-    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
-    <div class="collapsible-body"><span>Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do ocorrido.</span></div>
-  </li>
-</ul>
+      <!--resposta 3-->
+      <div class="white">
+        <div class="input-field col s6">
+          <input type="text" id="rua" placeholder="Nome da rua se você souber">
+          <label for="rua"></label>
         </div>
-        <div class="col s11">
-<p class="pergunta">Observação:</p>
+
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
         </div>
-    </div>
 
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-</form>
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
+        </div>
+      </div>
+
+      <!--Observação e Caixa 4-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">Observação:</p>
+        </div>
+        <div class="col s5">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header green">
+                <i class="material-icons">live_help</i>
+              </div>
+              <div class="collapsible-body white ">
+                <span class="valing">Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do
+                  ocorrido.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--RESPOSTA-->
+      <div class="white">
+        <div class="input-field col s6">
+          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="rua"></label>
+        </div>
+      </div>
 
 
 
-<br>
+    </form>
+  </div>
+
+
+
+  <br>
 
 
 
@@ -185,21 +265,26 @@ ex:o meu vizinho sempre bate no filho, no caso a opção seria MAUS TRATOS </spa
 
 
 
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // meus scripts devem ficar aqui dentro
+
+      $('.collapsible').collapsible();
+      $('.modal').modal();
 
 
-
-     <!--JQuery-->
-     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-     <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script>
-$('.collapsible').collapsible();
-
-</script>
-
-</div>
+    })
+  </script>
 </body>
 
 </html>
