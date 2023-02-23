@@ -1,0 +1,11 @@
+{
+  "appId": "sos.comunitario",
+  "appName": "S.0.S Comunitário",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

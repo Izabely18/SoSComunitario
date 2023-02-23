@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <title>SoS Comunitario</title>
+</head>
+
+<body class="color cyan">
+  <!--NAVBAR FIXA-->
+  <DIV class="navbar-fixed ">
+    <div class="nav-wrapper ">
+        <nav class="green">   
+        <p class="center">Sua denúncia será anônima</p>
+        </nav>   
+    </div>
+</DIV>
+
+ <!--popout-->
+<div class="row">
+  <div class="col s3"><ul class="collapsible popout">
+<li >
+  <div class="collapsible-header green">
+      <i class="material-icons">live_help</i>
+  </div>
+  <div class="collapsible-body white ">
+      <span class="valing">Este aplicativo serve para você realizar denuncias e 
+acionar os órgãos públicos responsáveis de sua cidade.</span>
+  </div>
+</li>
+</ul></div>
+  <div class="col s8 blue "></div>
+</div>
+
+<div class="container">
+  <li>
+    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
+    <div class="collapsible-body"><span>Aqui você deve selecionar quem está precisando de ajuda. </span></div>
+  </li>
+</ul>
+        </div>
+    </div>
+
+<form  class="card-panel white" >
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Jovem</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Adulto</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Idoso</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Criança</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Deficiente</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Grávida</span>
+    </label>
+  </p>
+  <p >Nome se você souber</p>
+  <input class="s6">
+
+    <div class="3 row">
+        <div class="col s1">
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
+    <div class="collapsible-body"><span>selecione o que está acontecendo
+ex:o meu vizinho sempre bate no filho, no caso a opção seria MAUS TRATOS </span></div>
+  </li> 
+</ul>
+        </div>
+        <div class="col s11">
+
+        </div>
+    </div>
+
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Trabalho Infantil</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Abuso</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Abandono</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2" type="radio" />
+            <span>Maus tratos</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group2 " type="radio" />
+            <span>Está em um surto de drogas</span>
+          </label>
+        </p>
+
+    <div class="4 row">
+        <div class="col s1">
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
+    <div class="collapsible-body"><span>Você irá por o endereço do local que ira sofrer a denuncia, ex: se for o filho do seu vizinho você vai por o numero da casa 
+      dele e o nome da rua. Se for um morador de rua você coloca a rua que ele está e o numero da casa mais próxima </span></div>
+  </li>
+</ul>
+        </div>
+        <div class="col s11">
+<p class="pergunta">3- Onde está?</p>
+        </div>
+</div>
+
+
+
+          <p>Escreva o nome da cidade onde você está-</p>
+        <input>
+
+    <div class="5 row">
+    <div class="col s1">
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header  green accent-4"><i class="material-icons">live_help</i></div>
+    <div class="collapsible-body"><span>Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do ocorrido.</span></div>
+  </li>
+</ul>
+        </div>
+        <div class="col s11">
+<p class="pergunta">Observação:</p>
+        </div>
+    </div>
+
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+</form>
+
+
+
+<br>
+
+
+
+  <button class="btn waves-effect waves-light green darken-2" type="Enviar" name="action">
+    <a href="segunda.html" class="white-text">Enviar</a>
+  </button>
+
+
+
+
+
+
+
+     <!--JQuery-->
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+     <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+$('.collapsible').collapsible();
+
+</script>
+
+</div>
+</body>
+
+</html>

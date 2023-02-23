@@ -1,0 +1,26 @@
+
+
+span{
+  font-family:FreeMono, monospace;
+  font-size: 20px;
+}
+
+.pergunta{
+  font-family: Bradley Hand, cursive;
+  font-size: 30px;
+}
+
+.titulo{
+  font-family:Brush Script MT, Brush Script Std, cursive ;
+  font-size: 80px;
+  color: white;
+}
+
+
+.material-icons{
+  font-size: 4rem;
+}
+
+.container segunda{
+  border-color: black ;
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">S.0.S Comunitário</string>
+    <string name="title_activity_main">S.0.S Comunitário</string>
+    <string name="package_name">sos.comunitario</string>
+    <string name="custom_url_scheme">sos.comunitario</string>
+</resources>
