@@ -51,7 +51,7 @@
 
   <div class="container">
 
-    <form class="col s12" action="">
+    <form class="col s12" id="contact-form">
       <div class="row">
         <div class="col s7">
           <p class="pergunta">1- Quem é ?</p>
@@ -75,43 +75,43 @@
       <div class="white">
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="jovem" />
             <span>Jovem</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="Adulto" />
             <span>Adulto</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="Idoso" />
             <span>Idoso</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="crianca" />
             <span>Criança</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="Deficiente"/>
             <span>Deficiente</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" type="radio" />
+            <input name="group1" type="radio" value="gravida"/>
             <span>Grávida</span>
           </label>
         </p>
         <br>
         <div class="input-field col s6">
-          <input type="text" id="nome" placeholder="Nome da pessoa">
+          <input type="text" id="nome" name="nome" placeholder="Nome da pessoa">
           <label for="nome">Nome se você souber:</label>
         </div>
       </div>
@@ -139,31 +139,31 @@
       <div class="white">
         <p>
           <label>
-            <input name="group2" type="radio" />
+            <input name="group2" type="radio" value="trabalho infantil" />
             <span>Trabalho Infantil</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group2" type="radio" />
+            <input name="group2" type="radio" value="Abuso"/>
             <span>Abuso</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group2" type="radio" />
+            <input name="group2" type="radio" value="Abandono"/>
             <span>Abandono</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group2" type="radio" />
+            <input name="group2" type="radio" value="maus tratos" />
             <span>Maus tratos</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group2 " type="radio" />
+            <input name="group2 " type="radio" value="esta em um surto de drogas"/>
             <span>Está em um surto de drogas</span>
           </label>
         </p>
@@ -195,18 +195,18 @@
       <!--resposta 3-->
       <div class="white">
         <div class="input-field col s6">
-          <input type="text" id="rua" placeholder="Nome da rua se você souber">
+          <input type="text" id="rua" name="rua" placeholder="Nome da rua se você souber">
           <label for="rua"></label>
         </div>
 
         <div class="input-field col s6">
-          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-          <label for="rua"></label>
+          <input type="text" id="numero" name="numero" placeholder="Número da casa ou de uma casa próxima">
+          <label for="numero"></label>
         </div>
 
         <div class="input-field col s6">
-          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-          <label for="rua"></label>
+          <input type="text" id="bairro" name="bairro" placeholder="nome do bairro">
+          <label for="bairro"></label>
         </div>
       </div>
 
@@ -232,39 +232,28 @@
       </div>
       <!--RESPOSTA-->
       <div class="white">
-        <div class="input-field col s6">
-          <input type="text" id="numero" placeholder="Número da casa ou de uma casa próxima">
-          <label for="rua"></label>
+        <div class="input-field col s6" >
+          <input type="text" id="observacao" name="observacao" placeholder="coloque aqui o qoe você deseja falar">
+          <label for="Observação"></label>
         </div>
       </div>
 
+      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Enviar">
 
 
     </form>
   </div>
 
-
-
   <br>
-
-
-
-  <button class="btn waves-effect waves-light green darken-2" type="Enviar" name="action">
-    <a href="segunda.html" class="white-text">Enviar</a>
-  </button>
-
-
-
 
   <!--JQuery-->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-  <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script>
     $(document).ready(function () {
@@ -273,7 +262,22 @@
       $('.collapsible').collapsible();
       $('.modal').modal();
 
+      emailjs.init('bI40Hs500CEXrKMjA');
 
+
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('personalEmail', 'SOScomunitario', this)
+                    .then(function() {
+                      window.location.href = "segunda.html"
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        window.location.href = "erro.html"
+                    });
+            });
     })
   </script>
 </body>
