@@ -24,11 +24,19 @@ span{
   margin-left: 50px;
 }
 
-
 .material-icons{
   font-size: 4rem;
 }
 
 .container segunda{
   border-color: black ;
+}
+
+.navbar{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+
+.bodinha{
+  border-radius: 200px;
 }
