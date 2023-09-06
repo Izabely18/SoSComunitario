@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>SoS Comunitario</title>
+</head>
+
+<body class="color cyan">
+  <!--NAVBAR FIXA-->
+  <div class="navbar-fixed ">
+    <div class="nav-wrapper ">
+      <nav class="green">
+        <p class="center navbar">Sua denúncia será anônima</p>
+      </nav>
+    </div>
+  </div>
+
+  <!--Modal-->
+
+
+  <div class="row">
+    <div class="col s3">
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger green" href="#modal1"><i
+          class="material-icons">live_help</i></a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>Para que serve este aplicativo?</h5>
+          <p class="valing">Este aplicativo serve para você realizar denuncias e
+            acionar os órgãos públicos responsáveis de sua cidade.</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="col s8 blue "></div>
+  </div>
+
+  <div class="container">
+
+    <form class="col s12" id="contact-form">
+
+      <!--Pergunta e Caixa 3-->
+
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">3- Onde está?</p>
+        </div>
+        <div class="col s5">
+          <a class="waves-effect waves-light btn modal-trigger green" href="#modal4"><i
+              class="material-icons">live_help</i></a>
+
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <h5>Onde está?</h5>
+              <p class="valing">Você irá por o endereço do local que ira sofrer a denúncia,
+                Ex: se for o filho do seu vizinho você vai por o número da casa dele e o nome da rua.
+                Se for um morador de rua você coloca a rua que ele está e o número da casa mais próxima</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--resposta 3-->
+      <div class="white">
+        <br>
+        <div class="input-field col s6">
+          <input type="text" id="rua" name="rua">
+          <label for="rua">Nome da rua-</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" id="numero" name="numero">
+          <label for="numero">Número da casa-</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" id="bairro" name="bairro">
+          <label for="bairro">Nome do bairro-</label>
+        </div>
+        <br>
+      </div>
+
+      <!--Observação e Caixa 4-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">Observação:</p>
+        </div>
+        <div class="col s5">
+          <a class="waves-effect waves-light btn modal-trigger green" href="#modal5"><i
+              class="material-icons">live_help</i></a>
+
+          <div id="modal5" class="modal">
+            <div class="modal-content">
+              <h5>O que é para fazer aqui?</h5>
+              <p class="valing">Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do
+                ocorrido.</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--RESPOSTA-->
+      <div class="white">
+        <div class="input-field col s6">
+          <input type="text" id="observacao" name="observacao" placeholder="coloque aqui o qoe você deseja falar">
+          <label for="Observação"></label>
+        </div>
+      </div>
+
+      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Enviar">
+
+
+    </form>
+  </div>
+
+  <br>
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // meus scripts devem ficar aqui dentro
+
+      $('.collapsible').collapsible();
+      $('.modal').modal();
+
+      emailjs.init('bI40Hs500CEXrKMjA');
+
+
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        objeto = {
+          rua: document.querySelector('input[name="rua"]').value,
+          numero: document.querySelector('input[name="numero"]').value,
+          bairro: document.querySelector('input[name="bairro"]').value,
+          observacao: document.querySelector('input[name="observacao"]').value,
+          vitima: sessionStorage.getItem("vitima"),
+          nome: sessionStorage.getItem("nome"),
+          infracao: sessionStorage.getItem("infracao")
+        }
+        if (objeto.vitima == 'Crianca/Adolescente') {
+          templateid = 'conselhoTutelar'
+        } else {
+          templateid = "policia"
+        }
+        emailjs.send('personalEmail', templateid, objeto)
+          .then(function () {
+            window.location.href = "msgSucesso.html"
+          }, function (error) {
+            console.log('FAILED...', error);
+            window.location.href = "msgErro.html"
+          });
+      });
+    })
+  </script>
+</body>
+
+</html>

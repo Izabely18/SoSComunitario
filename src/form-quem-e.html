@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>SoS Comunitario</title>
+</head>
+
+<body class="color cyan">
+  <!--NAVBAR FIXA-->
+  <div class="navbar-fixed ">
+    <div class="nav-wrapper ">
+      <nav class="green">
+        <p class="center navbar">Sua denúncia será anônima</p>
+      </nav>
+    </div>
+  </div>
+
+  <!--Modal-->
+
+
+  <div class="row">
+    <div class="col s3">
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger green" href="#modal1"><i
+          class="material-icons">live_help</i></a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>Para que serve este aplicativo?</h5>
+          <p class="valing">Este aplicativo serve para você realizar denuncias e
+            acionar os órgãos públicos responsáveis de sua cidade.</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="col s8 blue "></div>
+  </div>
+
+  <div class="container">
+
+    <form class="col s12" id="contact-form">
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">1- Quem é ?</p>
+        </div>
+        <div class="col s5">
+          <a class="waves-effect waves-light btn modal-trigger green" href="#modal2"><i
+              class="material-icons">live_help</i></a>
+
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h5>Quem é?</h5>
+              <p class="valing">Aqui você deve selecionar quem está precisando de ajuda.</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--Resposta 1-->
+      <div class="white">
+        <p>
+          <label>
+            <input name="vitima" type="radio" value="Criança/Adolescente" />
+            <span>Criança/Adolescente</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="vitima" type="radio" value="Idoso" />
+            <span>Idoso</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="vitima" type="radio" value="Adulto do sexo feminino" />
+            <span>Adulto do sexo feminino</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="vitima" type="radio" value="Adulto do sexo masculino" />
+            <span>Adulto do sexo masculino</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="vitima" type="radio" value="Portador de necessidades especiais" />
+            <span>Portador de necessidades especiais</span>
+          </label>
+        </p>
+        <br>
+        <div class="input-field col s6">
+          <input type="text" id="nome" name="nome" placeholder="Nome da pessoa">
+          <label for="nome">Nome se você souber:</label>
+        </div>
+      </div>
+
+      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Próximo">
+
+
+    </form>
+  </div>
+
+  <br>
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // meus scripts devem ficar aqui dentro
+
+      $('.collapsible').collapsible();
+      $('.modal').modal();
+
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        selecionado = document.querySelector('input[name="vitima"]:checked').value
+        sessionStorage.setItem("vitima", selecionado);
+        nome = document.querySelector('input[name="nome"]').value
+        sessionStorage.setItem("nome", nome);
+
+        if (selecionado == 'Criança/Adolescente') {
+          window.location.href = "form-crianca.html"
+        } else if (selecionado == 'Idoso') {
+          window.location.href = "form-idoso.html"
+        } else if (selecionado == 'Adulto do sexo feminino') {
+          window.location.href = "form-feminino.html"
+        } else if (selecionado == 'Adulto do sexo masculino') {
+          window.location.href = "form-masculino.html"
+        } else if (selecionado == 'Portador de necessidades especiais') {
+          window.location.href = "form-especial.html"
+        }
+
+      });
+
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>SoS Comunitario</title>
+</head>
+
+<body class="color cyan">
+  <!--NAVBAR FIXA-->
+  <div class="navbar-fixed ">
+    <div class="nav-wrapper ">
+      <nav class="green">
+        <p class="center navbar">Sua denúncia será anônima</p>
+      </nav>
+    </div>
+  </div>
+
+  <!--Modal-->
+
+
+  <div class="row">
+    <div class="col s3">
+
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger green" href="#modal1"><i
+          class="material-icons">live_help</i></a>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>Para que serve este aplicativo?</h5>
+          <p class="valing">Este aplicativo serve para você realizar denuncias e
+            acionar os órgãos públicos responsáveis de sua cidade.</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="col s8 blue "></div>
+  </div>
+
+  <div class="container">
+
+    <form class="col s12" id="contact-form">
+      <!--Pergunta e Caixa 2-->
+      <div class="row">
+        <div class="col s7">
+          <p class="pergunta">2- O que está acontecendo?</p>
+        </div>
+        <div class="col s5">
+          <a class="waves-effect waves-light btn modal-trigger green" href="#modal3"><i
+              class="material-icons">live_help</i></a>
+
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+              <h5>O que está acontecendo?</h5>
+              <p class="valing">Selecione o que está acontecendo,
+                ex: O meu vizinho sempre bate no filho quando bêbado, no caso a opção seria MAUS TRATOS</p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Resposta 2-->
+      <div class="white">
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Abuso " />
+            <span>Abuso</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Violência Sexual" />
+            <span>Violência Sexual</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Violência Psicológica" />
+            <span>Violência Psicológica</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Violência Doméstica" />
+            <span>Exposição a violência Doméstica</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Abandono de incapaz" />
+            <span>Abandono de incapaz </span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Maus tratos" />
+            <span>Maus Tratos</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="infracao" type="radio" value="Trabalho Infantil" />
+            <span>Trabalho Infantil</span>
+          </label>
+        </p>
+      </div>
+      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Próximo">
+
+
+    </form>
+  </div>
+
+  <br>
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // meus scripts devem ficar aqui dentro
+
+      $('.collapsible').collapsible();
+      $('.modal').modal();
+
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        
+
+        event.preventDefault();
+        selecionado = document.querySelector('input[name="infracao"]:checked').value
+        sessionStorage.setItem("infracao", selecionado);
+
+        window.location.href = "form-local.html"
+
+      });
+    })
+  </script>
+</body>
+
+</html>
