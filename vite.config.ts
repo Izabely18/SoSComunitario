@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -8,18 +9,17 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: './src/index.html',
-        pag1: './src/form-quem-e.html',
-        pag4: './src/form-crianca.html',
-        pag5: './src/form-especial.html',
-        pag6: './src/form-feminino.html',
-        pag7: './src/form-idoso.html',
-        pag8: './src/form-local.html',
-        pag9: './src/form-masculino.html',
-        pag10: './src/form-quem-e.html',
-        pag11: './src/index.html',
-        pag14: './src/msgErro.html',
-        pag13: './src/msgSucesso.html'
+        main: resolve(__dirname, './src/index.html'),
+        pag1: resolve(__dirname, './src/form-quem-e.html'),
+        pag2: resolve(__dirname, './src/form-crianca.html'),
+        pag3: resolve(__dirname, './src/form-especial.html'),
+        pag4: resolve(__dirname, './src/form-feminino.html'),
+        pag5: resolve(__dirname, './src/form-idoso.html'),
+        pag6: resolve(__dirname, './src/form-local.html'),
+        pag7: resolve(__dirname, './src/form-masculino.html'),
+        pag8: resolve(__dirname, './src/form-quem-e.html'),
+        pag9: resolve(__dirname, './src/msgErro.html'),
+        pag10: resolve(__dirname, './src/msgSucesso.html')
       },
     }
   },
