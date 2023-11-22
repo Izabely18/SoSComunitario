@@ -1,140 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8" />
+  <title>SoSComunitario</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+  <link rel="manifest" href="./manifest.json" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <title>SoS Comunitario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body class="color cyan">
-  <!--NAVBAR FIXA-->
-  <div class="navbar-fixed ">
-    <div class="nav-wrapper ">
-      <nav class="green">
-        <p class="center navbar">Sua denúncia será anônima</p>
-      </nav>
+<body>
+  <header class="green" style="display: flex; align-items: center;">
+    <a id='voltar' class="white-text" href="#"><i class="left big-font material-icons">arrow_back</i></a>
+    <span class="big-font">S.O.S. Comunitário</span>
+    <i class="right big-font material-icons green-text">arrow_back</i>
+  </header>
+
+  <main>
+    <div class="container">
+      <h4>3. Onde está? <a href="#help" class="modal-trigger btn-small btn-floating btn-large waves-effect waves-light green right"><i class="material-icons">live_help</i></a></h4>
+      <div class="row">
+        <form id="local" action="#" class="white col s12">
+
+          <p class="input-field">
+            <input type="text" id="rua" name="rua">
+            <label for="rua">Nome da rua</label>
+          </p>
+
+          <p class="input-field">
+            <input type="text" id="numero" name="numero">
+            <label for="numero">Número da casa</label>
+          </p>
+
+          <p class="input-field">
+            <input type="text" id="bairro" name="bairro">
+            <label for="bairro">Nome do bairro</label>
+          </p>
+        </form>
+      </div>
+
+      <h4>4. Observações <a href="#obs" class="modal-trigger btn-small btn-floating btn-large waves-effect waves-light green right"><i class="material-icons">live_help</i></a></h4>
+      <div class="row">
+        <form id="formulario" action="#" class="white col s12">
+          <p class="input-field">
+            <input type="text" id="observacao" name="observacao">
+            <label for="observacao">Coloque aqui o que você deseja falar</label>
+          </p>
+        </form>
+      </div>
+      <div class="row">
+        <p>
+          <button id="submeter" class="btn waves-effect waves-light green right" type="submit" name="action">Próximo
+          </button>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="green center-align">
+    <p>Sua denúncia será anônima</p>
+  </footer>
+
+  <div id="help" class="modal black-text">
+    <div class="modal-content">
+      <h5>Onde está?</h5>
+      <p>Você vai por o endereço do local que vai sofrer a denúncia. Por exemplo, se for o filho do seu vizinho, você vai por o número da casa dele e o nome da rua. Se for um morador de rua, você coloca a rua onde ele está e o número da casa mais próxima.</p>
     </div>
   </div>
 
-  <!--Modal-->
-
-
- 
-
-  <div class="container">
-
-    <form class="col s12" id="contact-form">
-
-      <!--Pergunta e Caixa 3-->
-
-      <div class="row">
-        <div class="col s7">
-          <p class="pergunta">3- Onde está?</p>
-        </div>
-        <div class="col s5">
-          <a class="waves-effect waves-light btn modal-trigger green" href="#modal4"><i
-              class="material-icons">live_help</i></a>
-
-          <div id="modal4" class="modal">
-            <div class="modal-content">
-              <h5>Onde está?</h5>
-              <p class="valing">Você irá por o endereço do local que ira sofrer a denúncia,
-                Ex: se for o filho do seu vizinho você vai por o número da casa dele e o nome da rua.
-                Se for um morador de rua você coloca a rua que ele está e o número da casa mais próxima</p>
-            </div>
-            <div class="modal-footer">
-              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--resposta 3-->
-      <div class="white">
-        <br>
-        <div class="input-field col s6">
-          <input type="text" id="rua" name="rua">
-          <label for="rua">Nome da rua-</label>
-        </div>
-
-        <div class="input-field col s6">
-          <input type="text" id="numero" name="numero">
-          <label for="numero">Número da casa-</label>
-        </div>
-
-        <div class="input-field col s6">
-          <input type="text" id="bairro" name="bairro">
-          <label for="bairro">Nome do bairro-</label>
-        </div>
-        <br>
-      </div>
-
-      <!--Observação e Caixa 4-->
-      <div class="row">
-        <div class="col s7">
-          <p class="pergunta">Observação:</p>
-        </div>
-        <div class="col s5">
-          <a class="waves-effect waves-light btn modal-trigger green" href="#modal5"><i
-              class="material-icons">live_help</i></a>
-
-          <div id="modal5" class="modal">
-            <div class="modal-content">
-              <h5>O que é para fazer aqui?</h5>
-              <p class="valing">Aqui você pode descrever oque esta acontecendo,colocar fotos ou videos do
-                ocorrido.</p>
-            </div>
-            <div class="modal-footer">
-              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--RESPOSTA-->
-      <div class="white">
-        <div class="input-field col s6">
-          <input type="text" id="observacao" name="observacao" placeholder="coloque aqui o qoe você deseja falar">
-          <label for="Observação"></label>
-        </div>
-      </div>
-
-      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Enviar">
-
-
-    </form>
+  <div id="obs" class="modal black-text">
+    <div class="modal-content">
+      <h5>O que é para fazer aqui?</h5>
+      <p>Aqui você pode descrever oque esta acontecendo, colocar fotos ou videos do ocorrido.</p>
+    </div>
   </div>
 
-  <br>
-
-  <!--JQuery-->
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/app.js"></script>
 
   <script>
-    $(document).ready(function () {
-      // meus scripts devem ficar aqui dentro
-
-      $('.collapsible').collapsible();
-      $('.modal').modal();
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById('voltar').setAttribute('href', `${sessionStorage.getItem("lastPage")}`);
 
       emailjs.init('bI40Hs500CEXrKMjA');
 
-
-      document.getElementById('contact-form').addEventListener('submit', function (event) {
-        event.preventDefault();
+      document.getElementById('submeter').addEventListener('click', function (event) {
         objeto = {
           rua: document.querySelector('input[name="rua"]').value,
           numero: document.querySelector('input[name="numero"]').value,
@@ -144,7 +102,7 @@
           nome: sessionStorage.getItem("nome"),
           infracao: sessionStorage.getItem("infracao")
         }
-        if (objeto.vitima == 'Crianca/Adolescente') {
+        if (objeto.vitima == 'Criança/Adolescente') {
           templateid = 'conselhoTutelar'
         } else {
           templateid = "policia"
@@ -157,7 +115,7 @@
             window.location.href = "msgErro.html"
           });
       });
-    })
+    }, false);
   </script>
 </body>
 

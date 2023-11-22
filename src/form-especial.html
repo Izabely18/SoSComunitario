@@ -1,57 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8" />
+  <title>SoSComunitario</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+  <link rel="manifest" href="./manifest.json" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <title>SoS Comunitario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body class="color cyan">
-  <!--NAVBAR FIXA-->
-  <div class="navbar-fixed ">
-    <div class="nav-wrapper ">
-      <nav class="green">
-        <p class="center navbar">Sua denúncia será anônima</p>
-      </nav>
-    </div>
-  </div>
+<body>
+  <header class="green" style="display: flex; align-items: center;">
+    <a class="white-text" href="form-quem-e.html"><i class="left big-font material-icons">arrow_back</i></a>
+    <span class="big-font">S.O.S. Comunitário</span>
+    <i class="right big-font material-icons green-text">arrow_back</i>
+  </header>
 
-  <!--Modal-->
-
-  <div class="container">
-
-    <form class="col s12" id="contact-form">
-      <!--Pergunta e Caixa 2-->
-      <div class="row">
-        <div class="col s7">
-          <p class="pergunta">2- O que está acontecendo?</p>
-        </div>
-        <div class="col s5">
-          <a class="waves-effect waves-light btn modal-trigger green" href="#modal3"><i
-              class="material-icons">live_help</i></a>
-
-          <div id="modal3" class="modal">
-            <div class="modal-content">
-              <h5>O que está acontecendo?</h5>
-              <p class="valing">Selecione o que está acontecendo,
-                ex: O meu vizinho sempre bate no filho quando bêbado, no caso a opção seria MAUS TRATOS</p>
-            </div>
-            <div class="modal-footer">
-              <a class="modal-close waves-effect waves-green btn-flat">Fechar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Resposta 2-->
-      <div class="white">
+  <main>
+    <div class="container">
+      <h4>2. O que está acontecendo? <a href="#help" class="modal-trigger btn-small btn-floating btn-large waves-effect waves-light green right"><i class="material-icons">live_help</i></a>
+      </h4>
+      <form id="formulario" action="#" class="white">
         <p>
           <label>
             <input name="infracao" type="radio" value="Abuso " />
@@ -76,38 +51,41 @@
             <span>Expocição a violência doméstica </span>
           </label>
         </p>
-      </div>
-      <input class="btn waves-effect waves-light green darken-2" type="submit" value="Próximo">
-    </form>
+        <p>
+          <button class="btn waves-effect waves-light green right" type="submit" name="action">Próximo
+          </button>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="green center-align">
+    <p>Sua denúncia será anônima</p>
+  </footer>
+
+  <div id="help" class="modal black-text">
+    <div class="modal-content">
+      <h5>O que está acontecendo?</h5>
+      <p>Selecione o que está acontecendo. Por exemplo: "O meu vizinho sempre bate no filho quando bêbado". Neste caso, a opção seria "MAUS TRATOS".</p>
+    </div>
   </div>
 
-  <br>
-
-  <!--JQuery-->
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/app.js"></script>
 
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script>
-    $(document).ready(function () {
-      // meus scripts devem ficar aqui dentro
-
-      $('.collapsible').collapsible();
-      $('.modal').modal();
-
-      document.getElementById('contact-form').addEventListener('submit', function (event) {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById('formulario').addEventListener('submit', function (event) {
         event.preventDefault();
         selecionado = document.querySelector('input[name="infracao"]:checked').value
         sessionStorage.setItem("infracao", selecionado);
+        sessionStorage.setItem("lastPage", 'form-.html');
 
         window.location.href = "form-local.html"
 
       });
-    })
+    }, false);
   </script>
 </body>
 

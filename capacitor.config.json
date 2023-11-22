@@ -1,6 +1,6 @@
 {
-  "appId": "sos.comunitario",
-  "appName": "S.0.S Comunitário",
+  "appId": "com.github.izabely18",
+  "appName": "SoSComunitario",
   "bundledWebRuntime": false,
   "webDir": "dist",
   "plugins": {
